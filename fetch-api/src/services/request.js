@@ -8,7 +8,7 @@ function parseData(data){
 }
 
 function request(url, data = false, method = 'GET', type = 'FORM_DATA') {
-    // normalde fatch zaten promise base bir şey ama daha kontrollü yapmak için promise dönüyorum
+    // normalde fetch zaten promise base bir şey ama daha kontrollü yapmak için promise dönüyorum
     return new Promise(async (resolve, reject) => {
 
         const options = {
