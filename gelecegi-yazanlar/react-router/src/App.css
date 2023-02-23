@@ -1,0 +1,21 @@
+ul{
+  margin: 0;
+  padding: 0;
+  list-style-type:none ;
+}
+.menuUl{
+  display: flex;
+}
+.menuLi{
+  margin: 2px;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.menuLi:hover{
+  background-color: #ccc;
+}
+.menu{
+  border-bottom: 1px solid #ccc;
+}
