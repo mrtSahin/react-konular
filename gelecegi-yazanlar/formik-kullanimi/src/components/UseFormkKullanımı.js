@@ -23,7 +23,7 @@ function UseFormkKullanımı() {
         onSubmit: async (values, bag) => { // onSubmit bize bir de bag isminde bir değişken döndürür. bu bag içerisindeki metodlar ile form üzerinde işlemler yapabiliriz
             //await new Promise((r)=>setTimeout(r,1000)) // gerçek bir backend den veri geliyormuş gibi gecikme ekledik
             console.log(values)
-            if (values.email === 'murat@gmail.com') {
+            if (values.email === 'murat@gmail.com') {// burda karşılaştırmayı yapabilmek için useFormikten alınan values yerine onSubmit in döndüğü values kullanılmalı
                 return bag.setErrors({ email: "Bu mail alani zaten kullanilmis!!!" })
             }
             // butona basıldıktan sonra email in veritabanında herhangi bir mail le eşleşip eşleşmediği
