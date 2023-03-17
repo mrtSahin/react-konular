@@ -1,21 +1,20 @@
-import { useContext } from 'react'
-import ThemeContext from '../contexts/ThemeContext'
-import LanguageContext from '../contexts/LanguageContext'
+
+import { useLanguage } from '../contexts/LanguageContext'
+import { useTheme } from '../contexts/ThemeContext'
 
 function Footer() {
 
-    const {language,setLanguage}=useContext(LanguageContext)
+    const { language, setLanguage } = useLanguage()
 
-    const {theme,toggleTheme}=useContext(ThemeContext)
+    const { theme, toggleTheme } = useTheme()
     console.log(theme)
     return (
         <div>
-            <hr/>
+            <hr />
             Footer
             <p>Aktif Tema: {theme}</p>
             <button onClick={toggleTheme}>Temayı Değiş</button>
-            <button onClick={()=>setLanguage(prev=>(prev=='tr'?'en':'tr'))}>Dili Değiş</button>
-        
+            <button onClick={() => setLanguage(prev => (prev == 'tr' ? 'en' : 'tr'))}>Dili Değiş</button>
         </div>
     )
 }

@@ -1,9 +1,9 @@
-import React, { useContext } from 'react'
-import ThemeContext from '../contexts/ThemeContext'
+import React from 'react'
+import {useTheme} from '../contexts/ThemeContext'
 // value değerine erişebilmek için useContext ve value değerini yollayan contexi import etmeliyiz
 
 function ChangeTheme() {
-    const { theme, toggleTheme } = useContext(ThemeContext) // value değerinin alınması
+    const { theme, toggleTheme } = useTheme() // value değerinin alınması
     console.log(theme)
     return (
         <div >

@@ -1,10 +1,10 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const ThemeContext = createContext()
 
 export const ThemeContextProvider = ({ children }) => {
 
-    const defaultTheme=localStorage.getItem('theme') ||'light'
+    const defaultTheme = localStorage.getItem('theme') || 'light'
 
     const [theme, setTheme] = useState(defaultTheme)
 
@@ -24,4 +24,10 @@ export const ThemeContextProvider = ({ children }) => {
     return <ThemeContext.Provider value={values}>{children}</ThemeContext.Provider>
 }                                 // artık veriyi App componentinden dağil de buradan sağlıyoruz.
 
-export default ThemeContext
+export const useTheme = () => {
+    const context = useContext(ThemeContext)
+    if (context === undefined) {
+        throw new Error('useTheme must be used within a ThemeProvider')
+    }
+    return context
+}
