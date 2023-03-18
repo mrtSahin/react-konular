@@ -14,7 +14,7 @@ describe('Todo Tests', () => {  // Todo componentinde yapabileceğimiz tesler, �
     test('varsayilan olarak verilen 3 nesne render edilmeli',()=>{
         const items = screen.getAllByText(/Item/i)
 
-        expect(items.length).toEqual(3)
+        expect(items.length).toEqual(3) // ekrandaki item sayısının 3 e eşitliği kontrol ediliyor.
     })
 
     test('Input ve Button dokumanda bulunmali',()=>{
